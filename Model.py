@@ -139,7 +139,7 @@ for train_idx,test_idx in folds.split(x_data):
     score.append(a)
     fpr.append(b)
     tpr.append(c)
-print(score_1)
+print(score)
 
 
  
