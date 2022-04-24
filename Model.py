@@ -41,7 +41,7 @@ if not tf.test.gpu_device_name():
 else:
     print('Default GPU device :{}'.format(tf.test.gpu_device_name()))
 ####################Upload the input images#######################
-outdir='/scratch/Hammad/work/data_Riemann_final/data/'
+outdir='data/'
 image_S = np.load(outdir+'Image_s.npz',allow_pickle=True)['arr_0'][:100000]
 image_O = np.load(outdir+'Image_o.npz',allow_pickle=True)['arr_0'][:100000]
 image_bkg = np.load(outdir+'Image_bkg.npz',allow_pickle=True)['arr_0'][:100000]
