@@ -65,7 +65,7 @@ for i in tqdm(range(len(X_train))):
     X_train_norm.append(X)
    
 for j in tqdm(range(len(X_test))):
-    y = scaler.fit_transform(X_test[j])
+    y = scaler.transform(X_test[j])
     X_test_norm.append(y)
 
 #############################################
