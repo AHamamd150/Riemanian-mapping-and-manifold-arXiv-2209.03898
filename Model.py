@@ -88,7 +88,7 @@ x=MaxPooling2D(pool_size=(2, 2))(x)
 x=Dropout(0.25)(x)
 x= Flatten()(x)
 x=Dense(265, activation='relu')(x)
-outputs = Dense(2, activation='sigmoid')(x)
+outputs = Dense(2, activation='softmax')(x)
 
 model_cnn =  Model(inputs,outputs)
 
@@ -98,7 +98,7 @@ y_train = to_categorical(y_train, 2)
 y_test = to_categorical(y_test, 2)
 
 ##########Compile the model ###########
-model_cnn.compile(loss='binary_crossentropy',optimizer=tf.keras.optimizers.Adam(learning_rate=1e-03), metrics=['accuracy'])
+model_cnn.compile(loss='categorical_crossentropy',optimizer=tf.keras.optimizers.Adam(learning_rate=1e-03), metrics=['accuracy'])
 history_cnn = model_cnn.fit(x_train, y_train, validation_split=0.2, epochs=10, batch_size=256,shuffle=True, verbose=1)
 ############################
 pd.DataFrame(history_cnn.history).plot(xlabel='epochs',title='Sig vs oct (normal images)');
